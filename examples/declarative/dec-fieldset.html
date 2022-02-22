@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <radio-list name="room" required>
+    <template shadowroot="open">
+      <slot></slot>
+      <label>
+        <input type="radio" name="" value="other" />
+        <slot name="label"></slot>
+      </label>
+      <input type="text" name="other" value=""/>
+    </template>
+    <label>
+      <input type="radio" name="room" value="toilet" />
+      Туалет
+    </label>
+    <span slot="label">Другая комната</span>
+  </radio-list>
+  <script>
+    
+    const element = document.querySelector('radio-list');
+    console.log(element.getInnerHTML({
+      includeShadowRoots: true,
+    }));
+  </script>
+</body>
+</html>

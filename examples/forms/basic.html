@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form action="" method="get">
+    <fieldset>
+      <label>
+        Адрес электро-почты: 
+        <input required value="" autocomplete="email"
+               type="email" name="email" 
+               inputmode="email">
+      </label>
+    </fieldset>
+    <button type="submit">Подписаться</button>
+  </form>
+  
+  <script>
+    const submitHandler = (event) => {
+      console.log('submit');
+      event.preventDefault();
+      console.log(JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))));
+    }
+    const formdataHandler = (event) => {
+      console.log('formdata');
+      console.log(Object.fromEntries(event.formData));
+    };
+    const form = document.querySelector('form');
+    form.addEventListener('formdata', formdataHandler);
+    form.addEventListener('submit', submitHandler);
+  </script>
+
+</body>
+</html>

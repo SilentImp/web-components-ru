@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <article is="basic-component"></article>
+  <script>
+    class RadioList extends HTMLElement {
+      static observedAttributes = ['required', 'value'];
+
+      constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+        console.log(this.shadowRoot);
+        const paragraph = document.createElement('P')
+        paragraph.appendChild(document.createTextNode('Basic text'));
+        this.shadowRoot.appendChild(paragraph);
+        console.log('constructor')
+      }
+
+      connectedCallback() {
+        console.log('connectedCallback')
+      }
+      attributeChangedCallback(name, oldValue, newValue) {
+        console.log('attributeChangedCallback')
+        console.log(name, oldValue, ' -> ', newValue);
+      }
+      disconnectedCallback() {
+        console.log('disconnectedCallback')
+      }
+    }
+    console.log('x')
+    customElements.define('basic-component', RadioList, {
+      extends: "article"
+    });
+  </script>
+</body>
+</html>

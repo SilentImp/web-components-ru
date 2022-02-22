@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    section {
+      background: yellow;
+    }
+  </style>
+  
+      
+  <slot-holder>
+    <section>
+      <h1>Title</h1>
+      <p>text text text</p>
+    </section>
+    <article>
+      <h1>Title</h1>
+      <p>text text text</p>
+    </article>
+  </slot-holder>
+  
+
+  <script>
+
+    const templateHTML = `
+    <style>
+        ::slotted(section) {
+          border: 1px solid red;
+          background: lime;
+        }
+
+        ::slotted(*)::after {
+          content: "---";
+        }
+
+        ::slotted(*) h1 {
+          background: lime;
+        }
+
+
+        ::slotted(* h1){
+          background: lime;
+        }
+      </style>
+    <article>
+      <slot></slot>
+    </article>`;
+  
+    class SlotHolder extends HTMLElement {  
+      constructor() {
+        super();
+        this.internals = this.attachInternals();
+        this.attachShadow({mode: 'open'});
+        const template = document.createElement('TEMPLATE');
+        template.innerHTML = templateHTML;
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+      }
+  
+    }
+    customElements.define('slot-holder', SlotHolder);
+  </script>
+</body>
+</html>

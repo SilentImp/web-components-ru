@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="get">
+    <fieldset>
+      <custom-subscription name="email" value="" required></custom-subscription>
+    </fieldset>
+    <button type="submit">Подписаться</button>
+  </form> 
+  <script>
+    const templateHTML = (name, value, isRequired) => `
+<label>
+  Адрес электро-почты: 
+  <input value="${value}" 
+         ${isRequired ? 'required' : '' }
+         autocomplete="email"
+         type="email" name="${name}" 
+         inputmode="email">
+</label>
+    `;
+    class CustomSubscription extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+        const template = document.createElement('TEMPLATE');
+        const name = this.getAttribute('name');
+        const value = this.getAttribute('value');
+        const isRequired = this.hasAttribute('required');
+        template.innerHTML = templateHTML(name, value, isRequired);
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+      }
+    }
+    customElements.define('custom-subscription', CustomSubscription);
+  </script>
+
+  <script>
+    const submitHandler = (event) => {
+      console.log('submit');
+      event.preventDefault();
+      console.log(JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))));
+    }
+    const formdataHandler = (event) => {
+      console.log('formdata');
+      console.log(Object.fromEntries(event.formData));
+    };
+    const form = document.querySelector('form');
+    form.addEventListener('formdata', formdataHandler);
+    form.addEventListener('submit', submitHandler);
+  </script>
+</body>
+</html>

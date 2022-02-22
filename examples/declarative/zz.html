@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <basic-component>Банана</basic-component>
+  <script>
+    class RadioList extends HTMLElement {
+
+      constructor() {
+        super();
+
+        const name = this.getAttribute('name');
+        const isRequired = this.hasAttribute('required');
+        const radio = document.createElement('INPUT');
+        radio.setAttribute('type', 'radio');
+        radio.setAttribute('name', name);
+        if (isRequired) {
+          radio.setAttribute('required', isRequired);
+        }
+
+        const input = radio.cloneNode();
+        input.setAttribute('type', 'text');
+        input.setAttribute('name', `${name}-value`);
+
+        const label = document.createElement('LABEL');
+        const labelText = this.dataset.label || 'Другое';
+        const labelTextNode = document.createTextNode(labelText);
+        
+        label.appendChild(radio);
+        label.appendChild(labelTextNode);
+
+        const fragment = document.createDocumentFragment();
+        fragment.appendChild(label);
+        fragment.appendChild(input);
+        
+        this.appendChild(fragment);
+      }
+
+      connectedCallback() {
+        console.log('connectedCallback')
+      }
+      disconnectedCallback() {
+        console.log('disconnectedCallback')
+      }
+    }
+    customElements.define('basic-component', RadioList);
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset is="basic-component"></fieldset>
+  <script>
+    class RadioList extends HTMLFieldSetElement {
+
+      constructor() {
+        super();
+        // this.attachShadow({mode: 'open'});
+        // this.shadowRoot.appendChild(document.createTextNode('Basic text'));
+        console.log('constructor')
+        this.appendChild(document.createTextNode('Basic text'));
+      }
+
+      connectedCallback() {
+        console.log('connectedCallback')
+      }
+      disconnectedCallback() {
+        console.log('disconnectedCallback')
+      }
+    }
+    customElements.define('basic-component', RadioList, { extends: "fieldset" });
+  </script>
+</body>
+</html>

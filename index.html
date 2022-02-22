@@ -1,0 +1,2669 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Presentation description">
+    <link rel="stylesheet" href="styles/SlideController.css">
+    <title>Веб-компоненты vs здравый смысл</title>
+  </head>
+  <body>
+    <main role="list">
+
+      <ex-illustration data-restart data-pixel data-src="images/title.webp" data-alt="" role="listitem">
+        <h1 class="mk-big-title mk-big-title-vs">Веб&nbsp;-&nbsp;компоненты<br>Здравый смысл</h1>
+      </ex-illustration>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="vote.svg" 
+        data-link="https://frontend.events/" 
+        data-label="Откройте голосование на https://frontend.events/">
+        Откройте frontend.events</ex-qrcode>
+
+      <ex-slide data-iframe data-wide role="listitem" >
+        <iframe src="https://frontend.events/"></iframe>
+      </ex-slide>
+
+      <ex-mktitle data-narrow data-size="3.8rem" data-top="40px" role="listitem" >Веб&nbsp;-&nbsp;компоненты?</ex-mktitle>
+
+      <ex-illustration data-src="images/three.jpeg" data-alt="" role="listitem">
+        <ex-cloud data-tail-size="2rem" data-angle="65deg" data-size="28px" data-left="310px" data-top="-160px">Template</ex-cloud>
+        <ex-cloud data-tail-size="2rem" data-angle="-180deg" data-size="28px" data-left="-5px" data-top="20px">Custom<br>Elements</ex-cloud>
+        <ex-cloud data-tail-size="2rem" data-angle="-65deg" data-size="28px" data-left="-320px" data-top="-160px">Shadow<br>DOM</ex-cloud>
+
+        <ex-cloud data-delay="2.5s" data-tail-size="2rem" data-angle="0" data-size="28px" data-left="300px" data-top="160px">ES6<br>modules</ex-cloud>
+        <ex-cloud data-delay="3.5s" data-tail-size="2rem" data-angle="35deg" data-size="28px" data-left="-340px" data-top="180px">CSS<br>Scoping</ex-cloud>
+        <ex-cloud data-size="0.8rem" data-delay="4s" data-tail-size="1rem" data-angle="-165deg" data-size="28px" data-left="-220px" data-top="10px">Constructable<br>Stylesheets</ex-cloud>
+      </ex-illustration>
+
+      <ex-slide data-content role="listitem" >
+        <h2>Зачем?</h2>
+        <ul>
+          <li>Скрыть сложность</li>
+          <li>Библиотека компонентов для разных фреймворков</li>
+          <li>Производительность</li>
+        </ul>
+      </ex-slide>
+
+      <ex-mktitle data-narrow data-level="1" data-size="3.5rem" data-left="56px" data-top="20px" role="listitem" >Зачем скрывать<br>сложность?</ex-mktitle>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-html" type="text/plain">
+          <li class="slide">
+            <figure class="content centred 
+                           sub-title sub-title-3">
+              <div>
+                <h2>Forms</h2>
+              </div>
+              <figcaption class="caption">
+                <span>И начнем мы с форм.</span>
+              </figcaption>
+            </figure>
+          </li>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="36" role="listitem">
+        <script class="language-html" type="text/plain">
+          <ex-title 
+            data-caption="И начнем мы с форм.">
+            Forms
+          </ex-title>
+        </script>
+      </ex-code>
+
+      <ex-mktitle data-narrow data-size="4rem" data-top="40px" data-left="0px" role="listitem" >Одна библиотека?</ex-mktitle>
+
+      <ex-screen data-src="images/material-system.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/material-vanila.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/material-react.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/material-vue.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/material-angular.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/material-swelte.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-mktitle data-narrow data-size="3.8rem" data-top="40px" data-left="0px" role="listitem" >Производительность?</ex-mktitle>
+
+      <ex-illustration data-contain data-src="images/benchmark-performance.png" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-illustration data-contain data-src="images/benchmark-bundle.svg" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="wccompare.svg" 
+        data-link="https://webcomponents.dev/blog/all-the-ways-to-make-a-web-component/" 
+        data-label="Прочтите статью «All the Ways to Make a Web Component - Feb 2022 Update»">
+        All the Ways to Make a Web Component - Feb 2022 Update</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="performance-2022.svg" 
+        data-link="https://engineering.linecorp.com/en/blog/the-baseline-for-web-development-in-2022/" 
+        data-label="Прочтите статью «The baseline for web development in 2022»">
+        The baseline for web development in 2022</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="performance-2020.svg" 
+        data-link="https://medium.com/@spkamboj/web-components-basics-and-performance-benefits-f7537c908075" 
+        data-label="Прочтите статью «Web Components Basics and Performance Benefits»">
+        Web Components Basics and Performance Benefits</ex-qrcode>
+
+
+      <ex-slide data-content role="listitem" >
+        <h2>Вы сможете:</h2>
+        <ul>
+          <li>Создавать custom elements</li>
+          <li>Добавлять в них разметку</li>
+          <li>Стилизовать её</li>
+        </ul>
+      </ex-slide>
+
+      <ex-screen data-src="images/input.png" data-alt="" role="listitem"></ex-screen>
+<!-- 
+      <ex-slide data-content role="listitem" >
+        <h2>Критерии приёма:</h2>
+        <ol>
+          <li>Список радио-кнопок</li>
+          <li>Добавляется опция «Не в списке»</li>
+          <li>Если она выбрана — доступно поле для ввода строки текста</li>
+        </ol>
+      </ex-slide>
+
+      <ex-slide data-content role="listitem" >
+        <h2>Критерии приёма:</h2>
+        <ol start="4">
+          <li>Это поле обязательно, если обязательна группа радио-кнопок</li>
+          <li>Валидация группы полей ввода происходит совместно</li>
+        </ol>
+      </ex-slide>
+
+      <ex-slide data-content role="listitem" >
+        <h2>Критерии приёма:</h2>
+        <ol start="6">
+          <li>Группа отправляет на сервер одно значение</li>
+          <li>Стандартная валидация работает</li>
+        </ol>
+      </ex-slide> -->
+
+      <ex-mktitle data-narrow data-size="4.5rem" data-top="40px" data-left="0px" role="listitem" >Custom elements?</ex-mktitle>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          // RadioList.mjs
+          class RadioList extends HTMLElement {}
+          customElements.define('radio-list', RadioList);
+        </script>
+      </ex-code>
+
+      <ex-code data-code="56" role="listitem">
+        <script class="language-html" type="text/plain">
+          <!-- index.html -->
+          <radio-list></radio-list>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="40" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          // index.mjs
+          import './RadioList/RadioList.mjs';
+          // …
+          import './Subscribe/Subscribe.mjs';
+          import './Modal/Modal.mjs';
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-html" type="text/plain">
+          <script type="module" src="javascript/index.mjs">
+          &lt;/script>
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/modules.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-html" type="text/plain">
+          <script type="module" src="RadioList/RadioList.mjs">&lt;/script>
+          <script type="module" src="Subscribe/Subscribe.mjs">&lt;/script>
+          <script type="module" src="Modal/Modal.mjs">&lt;/script>
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/modules-html.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="32" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list>
+            ↳
+            <label>
+              <input type="radio" 
+                     name="group-name" 
+                     value="other"> 
+            </label>
+            <input type="text" 
+                   name="other" 
+                   value="">
+          </radio-list>
+        </script>
+      </ex-code>
+
+
+      <ex-code data-code="32" role="listitem">
+        <script data-line="1, 11" class="language-html" type="text/plain">
+          <fieldset>
+            ↳
+            <label>
+              <input type="radio" 
+                     name="group-name" 
+                     value="other"> 
+            </label>
+            <input type="text" 
+                   name="other" 
+                   value="">
+          </fieldset>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          class RadioList extends HTMLFieldSetElement {}
+          customElements.define('radio-list', RadioList, {
+            extends: 'fieldset'
+          });
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-html" type="text/plain">
+          <fieldset is="radio-list">
+          </fieldset>
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/custom-elements-support.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/is-not-supported.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-15.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="3s" 
+          data-tail-size="2rem" 
+          data-angle="55deg" 
+          data-size="40px" 
+          data-left="100px" 
+          data-top="-160px"
+          >Apple!!!</ex-cloud>
+      </ex-illustration>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          class RadioList extends HTMLFieldSetElement {}
+          customElements.define('radio-list', RadioList, { 
+            extends: "fieldset" 
+          });
+        </script>
+      </ex-code>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-19.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="2.5s" 
+          data-tail-size="2rem" 
+          data-angle="-65deg" 
+          data-size="40px" 
+          data-left="175px" 
+          data-top="-155px"
+          >Blink<br>тоже</ex-cloud>
+        <ex-cloud 
+          data-delay="1.7s" 
+          data-tail-size="2rem" 
+          data-angle="85deg" 
+          data-size="40px" 
+          data-left="-110px" 
+          data-top="-165px"
+          >Опять<br>WebKit?</ex-cloud>
+        <ex-cloud 
+          data-delay="3s" 
+          data-tail-size="2rem" 
+          data-angle="0deg" 
+          data-size="30px" 
+          data-left="0px" 
+          data-top="155px"
+          >Зато в<br>Gecko<br>работает</ex-cloud>
+      </ex-illustration>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          class RadioList extends HTMLElement {}
+          customElements.define('radio-list', RadioList);
+        </script>
+      </ex-code>
+
+      <ex-slide data-content role="listitem" >
+        <h2>Жизненный цикл:</h2>
+        <ol>
+          <li>constructor</li>
+          <li>connectedCallback</li>
+          <li>attributeChangedCallback</li>
+          <li>disconnectedCallback</li>
+        </ol>
+      </ex-slide>
+
+      <ex-code data-code="30" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          class RadioList extends HTMLElement {
+            constructor() {}
+            connectedCallback() {}
+            attributeChangedCallback() {}
+            disconnectedCallback() {}
+            // Ни разу не понадобилось…
+            adoptedCallback() {}
+          }
+          customElements.define('radio-list', RadioList);
+        </script>
+      </ex-code>
+
+      <ex-code data-code="64" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          constructor() {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="56" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          connectedCallback() {}
+          disconnectedCallback() {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          attributeChangedCallback(name, oldValue, newValue) {
+            console.log(name, oldValue, ' → ', newValue);
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          static observedAttributes = ['required', 'value'];
+          attributeChangedCallback(name, oldValue, newValue) {
+            console.log(name, oldValue, ' → ', newValue);
+          }
+        </script>
+      </ex-code>
+
+      <ex-qrcode 
+        data-level="1"
+        data-qrcode="custom-element.svg" 
+        data-link="https://dom.spec.whatwg.org/#interface-element" 
+        data-label="Прочтите о нестандартных элементах в спецификации «DOM»">
+        DOM</ex-qrcode>
+
+      <ex-mktitle data-narrow data-size="5.8rem" data-top="30px" data-left="80px" role="listitem" >Разметка</ex-mktitle>
+
+      <ex-screen data-src="images/input.png" data-alt="" role="listitem"></ex-screen>
+      
+      <ex-code data-code="48" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list 
+            data-label="Другая комната"
+            name="room" 
+            required>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          connectedCallback() {
+            const name = this.getAttribute('name');
+            const isRequired = this.hasAttribute('required');
+            const radio = document.createElement('INPUT');
+            radio.setAttribute('type', 'radio');
+            radio.setAttribute('name', name);
+            radio.setAttribute('value', 'other');
+            if (isRequired) {
+              radio.setAttribute('required', isRequired);
+            }
+            /* … */
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          /* … */
+
+          const input = radio.cloneNode();
+          input.setAttribute('type', 'text');
+          input.setAttribute('name', `${name}-value`);
+          input.setAttribute('value', '');
+
+          const label = document.createElement('LABEL');
+          const labelText = this.dataset.label || 'Другое';
+          const labelTextNode = document.createTextNode(labelText);
+
+          /* … */
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          /* … */
+
+          label.appendChild(radio);
+          label.appendChild(labelTextNode);
+  
+          const fragment = document.createDocumentFragment();
+          fragment.appendChild(label);
+          fragment.appendChild(input);
+          
+          this.appendChild(fragment);
+        </script>
+      </ex-code>
+
+      <ex-mktitle data-narrow data-size="5.8rem" data-top="30px" data-left="80px" role="listitem" >Template</ex-mktitle>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-html" type="text/plain">
+          <template>
+            <label>
+              <input type="radio" 
+                     name="" 
+                     value="other">
+              Другая комната
+            </label>
+            <input type="text" 
+                   name="other"
+                   value="">
+          </template>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          const template = document.querySelector('template');
+          const content = template.content.cloneNode(true);
+          this.appendChild(content);
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          const templateHTML = `
+            <label>
+              <input type="radio" 
+                     name="" 
+                     value="other">
+              Другая комната
+            </label>
+            <input type="text" 
+                   name="other"
+                   value="">`;
+          const template = document.createElement('TEMPLATE');
+          template.innerHTML = templateHTML;
+          const content = template.content.cloneNode(true);
+          this.appendChild(content);
+        </script>
+      </ex-code>
+
+      <ex-mktitle data-narrow data-size="5.8rem" data-top="30px" data-left="0px" role="listitem" >Shadow DOM</ex-mktitle>
+
+      <ex-code data-code="36" role="listitem">
+        <script data-line="4" class="language-javascript" type="text/plain">
+          class RadioList extends HTMLElement {
+            constructor() {
+              super();
+              this.attachShadow({mode: 'open'});
+              // this.shadowRoot
+            }
+          }
+        </script>
+      </ex-code>
+
+      <ex-columns class="element-list" data-columns="2" role="listitem">
+        <ul slot="left">
+          <li>article</li>
+          <li>aside</li>
+          <li>blockquote</li>
+          <li>body</li>
+          <li>div</li>
+          <li>footer</li>
+          <li>h<mark>1-6</mark></li>
+        </ul>
+        <ul slot="right">
+          <li>header</li>
+          <li>main</li>
+          <li>nav</li>
+          <li>p</li>
+          <li>section</li>
+          <li>span</li>
+        </ul>
+      </ex-columns>
+
+      <ex-code data-code="56" role="listitem">
+        <script class="language-html" type="text/plain">
+          This element does not 
+          support attachShadow
+        </script>
+      </ex-code>
+
+      <ex-code data-code="26" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          const templateHTML = `…`;
+
+          class RadioList extends HTMLElement {
+            constructor() {
+              super();
+              this.attachShadow({mode: 'open'});
+              const template = document.createElement('TEMPLATE');
+              template.innerHTML = templateHTML;
+              const content = template.content.cloneNode(true);
+              this.shadowRoot.appendChild(content);
+            }
+          }
+        </script>
+      </ex-code>
+
+      <ex-mktitle data-narrow data-size="7rem" data-top="15px" data-left="150px" role="listitem" >Slot</ex-mktitle>
+
+      <ex-code data-code="28" role="listitem">
+        <script data-line="2" class="language-html" type="text/plain">
+          <template>
+            <slot></slot>
+            <label>
+              <input type="radio" 
+                     name="" 
+                     value="other">
+              <slot name="label"></slot>
+            </label>
+            <input type="text" 
+                   name="other"
+                   value="">
+          </template>
+        </script>
+      </ex-code>
+      
+      <ex-code data-code="28" role="listitem">
+        <script data-line="4-9" class="language-html" type="text/plain">
+          <radio-list
+            name="room" 
+            required>
+            <label>
+              <input type="radio" 
+                     name="room" 
+                     value="toilet">
+              Туалет
+            </label>
+            <span slot="label">Другая комната</span>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-illustration data-contain data-src="images/slot-1.png" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-code data-code="28" role="listitem">
+        <script data-line="7" class="language-html" type="text/plain">
+          <template>
+            <slot></slot>
+            <label>
+              <input type="radio" 
+                     name="" 
+                     value="other">
+              <slot name="label"></slot>
+            </label>
+            <input type="text" 
+                   name="other"
+                   value="">
+          </template>
+        </script>
+      </ex-code>
+      
+      <ex-code data-code="28" role="listitem">
+        <script data-line="10" class="language-html" type="text/plain">
+          <radio-list
+            name="room" 
+            required>
+            <label>
+              <input type="radio" 
+                     name="room" 
+                     value="toilet" />
+              Туалет
+            </label>
+            <span slot="label">Другая комната</span>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-illustration data-contain data-src="images/slot-2.png" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-mktitle data-narrow data-size="3.5rem" data-top="20px" data-left="80px" role="listitem" >Declarative<br>Shadow DOM</ex-mktitle>
+
+      <ex-code data-code="24" role="listitem">
+        <script data-line="2" class="language-html" type="text/plain">
+            <radio-list name="room" required>
+              <template shadowroot="open">
+                <slot></slot>
+                <label>
+                  <input type="radio" name="" value="other">
+                  <slot name="label"></slot>
+                </label>
+                <input type="text" name="other" value="">
+              </template>
+              <label>
+                <input type="radio" name="room" value="toilet">
+                Туалет
+              </label>
+              <span slot="label">Другая комната</span>
+            </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-illustration data-contain data-src="images/declarative-shadow-dom.png" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-1.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="2.5s" 
+          data-tail-size="2rem" 
+          data-angle="70deg" 
+          data-size="20px" 
+          data-left="-40px" 
+          data-top="-160px"
+          >Вот как<br>надо скрывать<br>сложности!</ex-cloud>
+      </ex-illustration>
+
+
+      <ex-code data-code="24" role="listitem">
+        <script data-line="2" class="language-html" type="text/plain">
+          <fieldset>
+            <template shadowroot="open">
+              <slot></slot>
+              <label>
+                <input type="radio" name="" value="other">
+                <slot name="label"></slot>
+              </label>
+              <input type="text" name="other" value="">
+            </template>
+            <label>
+              <input type="radio" name="room" value="toilet">
+              Туалет
+            </label>
+            <span slot="label">Другая комната</span>
+          </fieldset>
+        </script>
+      </ex-code>
+
+
+      <ex-code data-code="56" role="listitem">
+        <script class="language-html" type="text/plain">
+          This element does not 
+          support attachShadow
+        </script>
+      </ex-code>
+
+      <ex-code data-code="12" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list name="room" required>
+            <template shadowroot="open">
+              <slot></slot>
+              <label>
+                <input type="radio" name="" value="other">
+                <slot name="label"></slot>
+              </label>
+              <input type="text" name="other" value="">
+            </template>
+            <label>
+              <input type="radio" name="room" value="toilet">
+              Туалет
+            </label>
+            <span slot="label">Другая комната</span>
+          </radio-list>
+
+          <radio-list name="room" required>
+            <template shadowroot="open">
+              <slot></slot>
+              <label>
+                <input type="radio" name="" value="other">
+                <slot name="label"></slot>
+              </label>
+              <input type="text" name="other" value="">
+            </template>
+            <label>
+              <input type="radio" name="room" value="toilet">
+              Туалет
+            </label>
+            <span slot="label">Другая комната</span>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-illustration data-pixel data-src="images/fatality-2.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-tail-size="2rem" 
+          data-angle="-85deg" 
+          data-size="24px" 
+          data-left="-330px" 
+          data-top="-150px"
+          >Нравится<br>дублирование<br>разметки?</ex-cloud>
+      </ex-illustration>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-2.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-tail-size="2rem" 
+          data-angle="-85deg" 
+          data-size="24px" 
+          data-left="160px" 
+          data-top="-150px"
+          >А это ничего,<br>что HTML так<br>работает?</ex-cloud>
+      </ex-illustration>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          element.getInnerHTML({ 
+            includeShadowRoots: true,
+            closedRoots: […],
+          });
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list name="room" required>
+            <template shadowroot="open">
+              <slot></slot>
+              <label>
+                <input type="radio" name="" value="other">
+                <slot name="label"></slot>
+              </label>
+              <input type="text" name="other" value="">
+            </template>
+            <label>
+              <input type="radio" name="room" value="toilet">
+              Туалет
+            </label>
+            <span slot="label">Другая комната</span>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          const element = document.querySelector('radio-list');
+          console.log(element.innerHTML);
+        </script>
+      </ex-code>
+
+      <ex-code data-code="34" role="listitem">
+        <script class="language-html" type="text/plain">
+          <label>
+            <input type="radio" 
+                   name="room" 
+                   value="toilet">
+            Туалет
+          </label>
+          <span slot="label">
+            Другая комната
+          </span>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          const element = document.querySelector('radio-list');
+          console.log(element.getInnerHTML({
+            includeShadowRoots: true,
+          }));
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script data-line="6-13" class="language-javascript" type="text/plain">
+          <label>
+            <input type="radio" name="room" value="toilet">
+            Туалет
+          </label>
+          <span slot="label">Другая комната</span>
+          <template shadowroot="open">
+            <slot></slot>
+            <label>
+              <input type="radio" name="" value="other">
+              <slot name="label"></slot>
+            </label>
+            <input type="text" name="other" value="">
+          </template>
+        </script>
+      </ex-code>
+
+      <ex-qrcode 
+        data-level="2"
+        data-qrcode="declarative_shadow_dom_tpac.svg" 
+        data-link="https://www.w3.org/2020/10/TPAC/declarative_shadow_dom.html#talk" 
+        data-label="Посмотрите доклад «Declarative Shadow DOM» Там говорят о возможных проблемах с XSS">
+        Declarative Shadow DOM на TPAC 2020</ex-qrcode>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-4.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="3s" 
+          data-tail-size="2rem" 
+          data-angle="55deg" 
+          data-size="64px" 
+          data-left="-80px" 
+          data-top="-160px"
+          >XSS</ex-cloud>
+      </ex-illustration>
+
+      <ex-screen data-src="images/jsdom.svg" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/jsdom-en.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/jsdom-ru.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          HTMLTemplateElement.prototype.hasOwnProperty("shadowRoot");
+        </script>
+      </ex-code>
+
+
+      <ex-screen data-src="images/mozilla-declarative-shadow-dom.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/mozilla-email-en.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/mozilla-email-ru.png" data-alt="" role="listitem"></ex-screen>
+      
+      <ex-screen data-src="images/webkit-en.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-screen data-src="images/webkit-ru.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-3.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="3s" 
+          data-tail-size="2rem" 
+          data-angle="85deg" 
+          data-size="24px" 
+          data-left="-90px" 
+          data-top="-150px"
+          >Ничего!<br>Мы подождём.</ex-cloud>
+      </ex-illustration>
+
+      <ex-code data-code="20" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          (function attachShadowRoots(root) {
+            root.querySelectorAll("template[shadowroot]").forEach(template => {
+              const mode = template.getAttribute("shadowroot");
+              const shadowRoot = template.parentNode.attachShadow({ mode });
+              shadowRoot.appendChild(template.content);
+              template.remove();
+              attachShadowRoots(shadowRoot);
+            });
+          })(document);
+        </script>
+      </ex-code>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="proposal-short.svg" 
+        data-link="https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Declarative-Shadow-DOM.md" 
+        data-label="Прочтите предложение спецификации «Declarative Shadow DOM»">
+        Declarative Shadow DOM</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="proposal-long.svg" 
+        data-link="https://github.com/mfreed7/declarative-shadow-dom" 
+        data-label="Прочтите о реализации предложение в Blink">
+        Declarative Shadow DOM</ex-qrcode>
+
+        <ex-slide data-iframe data-wide role="listitem" >
+          <iframe src="https://frontend.events/check.html"></iframe>
+        </ex-slide>
+
+      <ex-mktitle data-narrow data-size="5.5rem" data-top="24px" data-left="24px" role="listitem">Стилизация</ex-mktitle>
+
+      <ex-mktitle data-narrow data-size="3.4rem" data-top="20px" data-left="40px" role="listitem">Как добавить<br>стили?</ex-mktitle>
+
+      <ex-code data-code="42" role="listitem">
+        <script class="language-js" type="text/plain">
+          this.sheet = new CSSStyleSheet();
+          this.sheet.replaceSync(`
+            label {
+              border: 2px solid #3b2eb3;
+              border-radius: 3px;
+            }
+          `);
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-js" type="text/plain">
+          this.shadowRoot.adoptedStyleSheets = [this.sheet];
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/css-style-sheet.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="40" role="listitem">
+        <script class="language-js" type="text/plain">
+          CSSStyleSheet.prototype.replaceSync
+          CSSStyleSheet.prototype.replace
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/css-style-sheet-replace.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="40" role="listitem">
+        <script class="language-js" type="text/plain">
+          this.shadowRoot.adoptedStyleSheets
+          document.adoptedStyleSheets
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/css-adopted-style-sheet.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="construct-stylesheets.svg" 
+        data-link="https://wicg.github.io/construct-stylesheets/" 
+        data-label="Прочтите спецификацию «Constructable Stylesheet Objects»">
+        Constructable Stylesheet Objects</ex-qrcode>
+
+      <ex-code data-code="30" role="listitem">
+        <script class="language-js" type="text/plain">
+          const templateHTML = `
+            <style>/* … */</style>
+            <slot></slot>
+            <label>
+              <input type="radio" name="" value="other">
+              <slot name="label"></slot>
+            </label>
+            <input type="text" name="other" value="">`;
+        </script>
+      </ex-code>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-12.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="3s" 
+          data-tail-size="2rem" 
+          data-angle="-90deg" 
+          data-size="20px" 
+          data-left="-160px" 
+          data-top="-160px"
+          >Как вам<br>«separation of<br>concerns»?</ex-cloud>
+      </ex-illustration>
+
+      <ex-code data-code="30" role="listitem">
+        <script class="language-js" type="text/plain">
+          const templateHTML = `
+          <style>@import "./RadioList.css";</style>
+          <slot></slot>
+          <label>
+            <input type="radio" name="" value="other">
+            <slot name="label"></slot>
+          </label>
+          <input type="text" name="other" value="">`;
+        </script>
+      </ex-code>   
+
+      <ex-code data-code="30" role="listitem">
+        <script class="language-js" type="text/plain">
+          <script 
+            type="module" 
+            src="javascript/components/RadioList.mjs">
+          &lt;/script>
+        </script>
+      </ex-code>   
+
+      <ex-code data-code="22" role="listitem">
+        <script class="language-js" type="text/plain">
+          const CSS_URL = new URL('./RadioList.css', import.meta.url).href;
+          const templateHTML = `
+          <style>@import "${CSS_URL}";</style>
+          <slot></slot>
+          <label>
+            <input type="radio" name="" value="other">
+            <slot name="label"></slot>
+          </label>
+          <input type="text" name="other" value="">`;
+        </script>
+      </ex-code> 
+
+      <ex-mktitle data-narrow data-size="6rem" data-top="24px" data-left="128px" role="listitem">FOUC?</ex-mktitle>
+
+      <ex-code data-code="64" role="listitem">
+        <script class="language-css" type="text/plain">
+          :defined {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="32" role="listitem">
+        <script class="language-css" type="text/plain">
+          :not(:defined) > template[shadowroot] ~ *,
+          :not(:defined) > * {
+            display: none;
+          }
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/defined.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="defined.svg" 
+        data-link="https://html.spec.whatwg.org/multipage/semantics-other.html#selector-defined" 
+        data-label="Прочтите о псевдо-классе :defined в спецификации «HTML»">
+        Псевдо-класс :defined в спецификации «HTML»</ex-qrcode>
+
+      <ex-mktitle data-narrow data-size="4rem" data-top="40px" data-left="0px" role="listitem">Cтилизация <span class="moon">🌚</span> ‣ 🌞</ex-mktitle> 
+
+      <ex-code data-code="40" role="listitem">
+        <script class="language-html" type="text/plain">
+          <fieldset is="radio-list">
+            <label><!--…--></label>
+          </fieldset>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="64" role="listitem">
+        <script class="language-css" type="text/plain">
+          :host {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="42" role="listitem">
+        <script class="language-css" type="text/plain">
+          /* reset.css */
+          fieldset {
+            padding: 0;
+          }
+          /* CSS внутри теневого DOM*/
+          :host {
+            padding: 1rem;
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="42" role="listitem">
+        <script class="language-css" type="text/plain">
+          /* reset.css */
+          fieldset {
+            padding: 0; 🏆
+          }
+          /* CSS внутри теневого DOM*/
+          :host {
+            padding: 1rem;
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="42" role="listitem">
+        <script class="language-css" type="text/plain">
+          /* reset.css */
+          fieldset {
+            padding: 0;
+          }
+          /* CSS внутри теневого DOM*/
+          :host {
+            padding: 1rem !important; 🏆
+          }
+        </script>
+      </ex-code>
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-22.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="2s" 
+          data-tail-size="2rem" 
+          data-angle="-180deg" 
+          data-size="20px" 
+          data-left="-200px" 
+          data-top="-40px"
+          >Скучали по<br>!important?</ex-cloud>
+      </ex-illustration>
+
+      <ex-screen data-src="images/host.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-css" type="text/plain">
+          :host([dir="rtl"]) {}
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/host-selector.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="42" role="listitem">
+        <script class="language-css" type="text/plain">
+          :host-context(html.fullscreen) {}
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/host-context.png" data-alt="" role="listitem"></ex-screen>
+
+      <!-- <ex-illustration data-src="images/xray-3.jpeg" data-alt="" role="listitem">
+        <ex-cloud data-tail-size="2rem" data-angle="-85deg" data-reverse data-size="18px" data-left="-200px" data-top="-160px">Ни webkit,<br>ни gecko<br>не поддерживают<br>::host-context()<br>и не будут</ex-cloud>
+      </ex-illustration> -->
+
+      <ex-screen data-src="images/host-console-reason-en.png" data-alt="" role="listitem"></ex-screen>
+      <ex-screen data-src="images/host-console-reason-ru.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="host-console-bugzilla.svg" 
+        data-link="https://bugzilla.mozilla.org/show_bug.cgi?id=1082060" 
+        data-label="Implement shadow-dom :host-context() CSS selector">
+        Implement shadow-dom :host-context() CSS selector</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="4"
+        data-qrcode="host-console-w3c.svg" 
+        data-link="https://github.com/w3c/csswg-drafts/issues/1914" 
+        data-label="Прочтите issue к спецификации">
+        Dynamic changes of state and attributes referenced by :host-context rules are pretty hard to handle efficiently</ex-qrcode>
+
+        <ex-illustration data-restart data-pixel data-img-top data-src="images/fatality-21.gif" data-alt="" role="listitem">
+          <ex-cloud 
+            data-tail-size="2rem" 
+            data-angle="50deg" 
+            data-size="20px" 
+            data-left="-100px" 
+            data-top="-200px"
+            >Сложно?</ex-cloud>
+        </ex-illustration>
+
+      <ex-code data-code="32" role="listitem">
+        <script class="language-css" type="text/plain">
+          @supports not selector(:host-context(*)) {
+            :host(.fullscreen) .slide {
+              /* … */
+            }
+          }
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/css-support-css.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="32" role="listitem">
+        <script class="language-javascript" type="text/plain">
+          CSS.supports('selector(:host-context(*))');
+        </script>
+      </ex-code>
+
+      <ex-screen data-src="images/css-support-js.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-code data-code="64" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::sloted(*) {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="64" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list>
+            ↳
+            <slot></slot>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="40" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list>
+            <label>
+              <input type="radio" 
+                     name="room" 
+                     value="toilet" />
+              Туалет
+            </label>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="64" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::sloted(label) {
+            display: block;
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::sloted(label) {
+            grid-area: head;
+          }
+          ::sloted(label)::before {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="40" role="listitem">
+        <script class="language-html" type="text/plain">
+          <radio-list>
+            <label>
+              <input type="radio" 
+                     name="room" 
+                     value="toilet" />
+              Туалет
+            </label>
+          </radio-list>
+        </script>
+      </ex-code>
+
+      <ex-code data-not-working data-code="56" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::sloted(input) {}
+          ::sloted(*) input {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="42" role="listitem">
+        <script class="language-css" type="text/plain">
+          /* reset.css */
+          label {
+            display: block; 🏆
+          }
+          /* CSS внутри теневого DOM*/
+          ::sloted(label) {
+            display: flex;
+          }
+        </script>
+      </ex-code>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="css-scoping.svg" 
+        data-link="https://drafts.csswg.org/css-scoping/" 
+        data-label="Прочтите о спецификацию «CSS Scoping Module»">
+        CSS Scoping Module</ex-qrcode>
+
+      <ex-mktitle data-narrow data-size="4rem" data-top="40px" data-left="0px" role="listitem">Cтилизация 🌞 ‣ <span class="moon">🌚</span></ex-mktitle> 
+
+      <ex-code data-not-working data-code="42" role="listitem">
+        <script class="language-css" type="text/plain">
+          .component >>> .title {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-css" type="text/plain">
+          background-color: inherit;
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-css" type="text/plain">
+          background-color: var(--background-color, #fff);
+        </script>
+      </ex-code>
+
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-css" type="text/plain">
+          .link {
+            background-color: var(--background-color, #fff);
+          }
+          .link:hover {
+            background-color: var(--background-color-hover, #ff0);
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-css" type="text/plain">
+          .link {
+            background-color: var(--background-color, #fff);
+          }
+          .link:hover {
+            background-color: var(--background-color-hover, #ff0);
+          }
+          .link:active {
+            background-color: var(--background-color-active, #f0f);
+          }
+          .link:focus {
+            background-color: var(--background-color-focus, #0ff);
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="24" role="listitem">
+        <script class="language-css" type="text/plain">
+          .link {
+            color: 🪦;
+            background-color: var(--background-color, #fff);
+          }
+          .link:hover {
+            background-color: var(--background-color-hover, #ff0);
+          }
+          .link:active {
+            background-color: var(--background-color-active, #f0f);
+          }
+          .link:focus {
+            background-color: var(--background-color-focus, #0ff);
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="32" role="listitem">
+        <script class="language-html" type="text/plain">
+          <slot></slot>
+          <label>
+            <input type="radio" 
+                   name="" 
+                   value="other" />
+            <slot name="label"></slot>
+          </label>
+          <input type="text" 
+                 name="other"
+                 value=""/>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="32" role="listitem">
+        <script data-line="2" class="language-html" type="text/plain">
+          <slot></slot>
+          <label part="label">
+            <input type="radio" 
+                   name="" 
+                   value="other" />
+            <slot name="label"></slot>
+          </label>
+          <input type="text" 
+                 name="other"
+                 value=""/>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::part(label) { 
+            display: block;
+          }
+          radio-list::part(label) {}
+        </script>
+      </ex-code>
+
+      <ex-code data-code="28" role="listitem">
+        <script class="language-html" type="text/plain">
+          <slot></slot>
+          <label part="label">
+            <input type="radio" 
+                   name="" 
+                   value="other" />
+            <slot name="label"></slot>
+          </label>
+          <label part="label">
+            <input type="text" 
+                   name="other"
+                   value=""/>
+          </label>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="36" role="listitem">
+        <script class="language-html" type="text/plain">
+          <slot></slot>
+          <label part="label">
+            <input type="radio" 
+                   name="" 
+                   value="other" />
+            <slot name="label"></slot>
+          </label>
+          <other-input></other-input>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-html" type="text/plain">
+          <input type="radio" 
+                 name="" 
+                 value="other" 
+                 part="input"
+                 />
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::part(input) {  
+            float: right;
+          }
+        </script>
+      </ex-code>
+
+      <ex-code data-code="32" role="listitem">
+        <script data-line="5" class="language-html" type="text/plain">
+          <slot></slot>
+          <label part="label">
+            <input type="radio" 
+                   name="" 
+                   value="other" />
+            <slot name="label"></slot>
+          </label>
+          <other-input
+            exportparts="input: radio-list-input">
+          </other-input>
+        </script>
+      </ex-code>
+
+      <ex-code data-code="48" role="listitem">
+        <script class="language-css" type="text/plain">
+          ::part(radio-list-input) {  
+            float: right;
+          }
+        </script>
+      </ex-code>
+
+      <ex-qrcode 
+        data-level="1"
+        data-qrcode="css-shadow-parts.svg" 
+        data-link="https://drafts.csswg.org/css-shadow-parts/" 
+        data-label="Прочтите спецификацию «CSS Shadow Parts»">
+        CSS Shadow Parts</ex-qrcode>
+
+
+        <ex-mktitle data-narrow data-size="3.8rem" data-top="45px" data-left="24px" role="listitem">Как насчет форм?</ex-mktitle>
+
+        <ex-slide data-content role="listitem" >
+          <h2>Жизненный цикл:</h2>
+          <ol>
+            <li>formAssociatedCallback(form)</li>
+            <li>formDisabledCallback(disabled)</li>
+            <li>formResetCallback()</li>
+            <li>formStateRestoreCallback(state, mode)</li>
+          </ol>
+        </ex-slide>
+
+        <ex-code data-code="22" role="listitem">
+          <script class="language-html" type="text/plain">
+            <form action="/request" method="post">
+              <fieldset>
+                <legend>Выберите комнату:</legend>
+                <label>
+                  <input type="radio" required name="room" value="other">
+                  Другая комната
+                </label>
+              </fieldset>
+              <button type="submit">Запросить стоимость ремонта</button>
+            </form>
+          </script>
+        </ex-code>
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-1" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <label>
+                <input type="radio" required name="room" value="other" />
+                Другая комната
+              </label>
+            </fieldset>
+            <button type="submit">Запросить стоимость ремонта</button>
+          </form>
+          <script>
+            const form1x0 = document.getElementById("demo-1-1");
+            form1x0.addEventListener('submit', (event) => {
+              event.preventDefault();
+              console.log(Object.fromEntries(new FormData(event.currentTarget)));
+              form1x0.reset();
+            });
+          </script>
+        </ex-slide>
+  
+        <ex-code data-code="48" role="listitem">
+          <script class="language-json" type="text/plain">
+            {
+              "room": "other", 
+            }
+          </script>
+        </ex-code>
+  
+        <ex-code data-code="28" role="listitem">
+          <script class="language-javascript" type="text/plain">
+            const templateHTML = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                      ${isRequired ? 'required' : '' }
+                      valur="other"
+                      name="${name}">
+                Другую комнату
+              </label>
+            </fieldset>`;
+          </script>
+        </ex-code>
+
+        <ex-code data-code="28" role="listitem">
+          <script data-line="3" class="language-javascript" type="text/plain">
+            const templateHTML = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       valur="other"
+                       name="${name}">
+                Другую комнату
+              </label>
+            </fieldset>`;
+          </script>
+        </ex-code>
+
+        <ex-code data-code="28" role="listitem">
+          <script data-line="4" class="language-javascript" type="text/plain">
+            const templateHTML = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       valur="other"
+                       name="${name}">
+                Другую комнату
+              </label>
+            </fieldset>`;
+          </script>
+        </ex-code>
+
+        <ex-code data-code="22" role="listitem">
+          <script data-line="6,7" class="language-javascript" type="text/plain">
+            class RadioList extends HTMLElement {
+              constructor() {
+                super();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+              }
+            }
+            customElements.define('radio-list', RadioList);
+          </script>
+        </ex-code>
+
+        <ex-code data-code="26" role="listitem">
+          <script data-line="4-6" class="language-html" type="text/plain">
+            <form action="/request" method="post">
+              <fieldset>
+                <legend>Выберите комнату:</legend>
+                <radio-list 
+                  required 
+                  name="room"></radio-list>
+              </fieldset>
+              <button type="submit">
+                Запросить стоимость ремонта
+              </button>
+            </form>
+          </script>
+        </ex-code>
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-2" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list 
+                  required 
+                  name="room"></radio-list>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       valur="other"
+                       name="${name}">
+                Другую комнату
+              </label>
+            </fieldset>`;
+            class RadioList extends HTMLElement {
+              constructor() {
+                super();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+              }
+            }
+            customElements.define('radio-list', RadioList);
+            const form1x1 = document.getElementById("demo-1-2");
+            form1x1.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x1.reset();
+              console.log(Object.fromEntries(new FormData(form1x1)));
+            });
+          </script>
+        </ex-slide>
+
+        <ex-code data-code="100" role="listitem">
+          <script class="language-json" type="text/plain">{}</script>
+        </ex-code>
+  
+        <ex-mktitle data-narrow data-size="4.2rem" data-top="20px" data-left="0px" role="listitem" >Отправка данных</ex-mktitle>
+
+        <ex-code data-code="22" role="listitem">
+          <script data-line="2,6" class="language-javascript" type="text/plain">
+            class RadioList extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+              }
+            }
+            customElements.define('radio-list', RadioList);
+          </script>
+        </ex-code>
+
+        <ex-code data-code="22" role="listitem">
+          <script data-line="11" class="language-javascript" type="text/plain">
+            connectedCallback () {
+              this.changeHandler = this.changeHandler.bind(this);
+              this.fieldset = this.shadowRoot.querySelector('fieldset');
+              this.fieldset.addEventListener('change', this.changeHandler);
+            }
+
+            changeHandler (event) {
+              const radio = this.shadowRoot.querySelector('input:checked');
+              const radioValue = radio === null ? '' : radio.value;
+              this.setAttribute('value', radioValue);
+              this.internals.setFormValue(radioValue);
+            }
+          </script>
+        </ex-code>
+  
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-3" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-3 
+                  required 
+                  name="room"></radio-list-3>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML3 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                        ${isRequired ? 'required' : '' }
+                        value="other"
+                        name="${name}">
+                Другую комнату
+              </label>
+            </fieldset>`;
+            class RadioList3 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML3(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+              }
+
+              connectedCallback () {
+                this.changeHandler = this.changeHandler.bind(this);
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                const radioValue = radio === null ? '' : radio.value;
+                this.setAttribute('value', radioValue);
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-3', RadioList3);
+
+            const form1x3 = document.getElementById("demo-1-3");
+            form1x3.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x3.reset();
+              console.log(Object.fromEntries(new FormData(form1x3)));
+            });
+          </script>
+        </ex-slide>
+  
+        <ex-code data-code="64" role="listitem">
+          <script class="language-json" type="text/plain">
+            {
+              "room":"other"
+            }
+          </script>
+        </ex-code>
+
+        <ex-code data-code="20" role="listitem">
+          <script data-line="15, 4-8" class="language-javascript" type="text/plain">
+            const templateHTML = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <label>
+                <input type="radio" 
+                       value="kitchen"
+                       name="${name}">
+                Кухня</label>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+          </script>
+        </ex-code>
+
+        <ex-code data-code="19" role="listitem">
+          <script data-line="" class="language-javascript" type="text/plain">
+            constructor() {
+              /* … */
+              this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+            }
+            changeHandler (event) {
+              /* … */
+              const isHidden = this.textInput.hasAttribute('hidden');
+              const isOther = radioValue === 'other';
+              if (isOther && isHidden) {
+                this.textInput.removeAttribute('hidden');
+              } else if (!isOther && !isHidden) {
+                this.textInput.setAttribute('hidden', true);
+                this.textInput.value = "";
+              }
+              radioValue = isOther ? this.textInput.value : radioValue ;
+              this.internals.setFormValue(radioValue);
+            }
+          </script>
+        </ex-code>
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-4" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-4 
+                  required 
+                  name="room"></radio-list-4>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML4 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <label>
+                <input type="radio" 
+                       value="kitchen"
+                       name="${name}">
+                Кухня</label>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+
+            class RadioList4 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML4(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+              }
+
+              connectedCallback () {
+                this.changeHandler = this.changeHandler.bind(this);
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                this.setAttribute('value', radioValue);
+                const isHidden = this.textInput.hasAttribute('hidden');
+                const isOther = radioValue === 'other';
+                if (isOther && isHidden) {
+                  this.textInput.removeAttribute('hidden');
+                } else if (!isOther && !isHidden) {
+                  this.textInput.setAttribute('hidden', true);
+                  this.textInput.value = "";
+                }
+                radioValue = isOther ? this.textInput.value : radioValue ;
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-4', RadioList4);
+
+            const form1x4 = document.getElementById("demo-1-4");
+            form1x4.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x4.reset();
+              console.log(Object.fromEntries(new FormData(form1x4)));
+            });
+          </script>
+        </ex-slide>
+
+        <ex-code data-code="20" role="listitem">
+          <script data-line="4" class="language-javascript" type="text/plain">
+            const templateHTML = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+                <slot></slot>
+                <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+          </script>
+        </ex-code>
+
+        <ex-code data-code="22" role="listitem">
+          <script data-line="5-8" class="language-html" type="text/plain">
+            <form action="/request" method="post">
+              <fieldset>
+                <legend>Выберите комнату:</legend>
+                <radio-list required name="room">
+                  <label>
+                    <input type="radio" value="kitchen" name="room">
+                    Кухня
+                  </label>
+                </radio-list>
+              </fieldset>
+              <button type="submit">
+                Запросить стоимость ремонта
+              </button>
+            </form>
+          </script>
+        </ex-code>
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-5" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-5 required name="room">
+                <label>
+                  <input type="radio" value="kitchen" name="room">
+                  Кухня
+                </label>
+              </radio-list-5>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML5 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+
+            class RadioList5 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML5(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+              }
+
+              connectedCallback () {
+                this.changeHandler = this.changeHandler.bind(this);
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                this.setAttribute('value', radioValue);
+                const isHidden = this.textInput.hasAttribute('hidden');
+                const isOther = radioValue === 'other';
+                if (isOther && isHidden) {
+                  this.textInput.removeAttribute('hidden');
+                } else if (!isOther && !isHidden) {
+                  this.textInput.setAttribute('hidden', true);
+                  this.textInput.value = "";
+                }
+                radioValue = isOther ? this.textInput.value : radioValue ;
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-5', RadioList5);
+
+            const form1x5 = document.getElementById("demo-1-5");
+            form1x5.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x5.reset();
+              console.log(Object.fromEntries(new FormData(form1x5)));
+            });
+          </script>
+        </ex-slide>
+
+        <ex-code data-code="20" role="listitem">
+          <script data-line="2" class="language-javascript" type="text/plain">
+            connectedCallback () {
+              const nodes = this.shadowRoot.querySelector('slot').assignedElements();
+              const fragment = document.createDocumentFragment();
+              nodes.forEach(node => fragment.appendChild(node));
+              this.fieldset.prepend(fragment);
+            }
+          </script>
+        </ex-code>
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-6" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-6 required name="room">
+                <label>
+                  <input type="radio" value="kitchen" name="room">
+                  Кухня
+                </label>
+              </radio-list-6>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML6 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+
+            class RadioList6 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML6(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+              }
+
+              connectedCallback () {
+                this.changeHandler = this.changeHandler.bind(this);
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+
+                const nodes = this.shadowRoot.querySelector('slot').assignedElements();
+                const fragment = document.createDocumentFragment();
+                nodes.forEach(node => fragment.appendChild(node));
+                this.fieldset.prepend(fragment);
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                this.setAttribute('value', radioValue);
+                const isHidden = this.textInput.hasAttribute('hidden');
+                const isOther = radioValue === 'other';
+                if (isOther && isHidden) {
+                  this.textInput.removeAttribute('hidden');
+                } else if (!isOther && !isHidden) {
+                  this.textInput.setAttribute('hidden', true);
+                  this.textInput.value = "";
+                }
+                radioValue = isOther ? this.textInput.value : radioValue ;
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-6', RadioList6);
+
+            const form1x6 = document.getElementById("demo-1-6");
+            form1x6.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x6.reset();
+              console.log(Object.fromEntries(new FormData(form1x6)));
+            });
+          </script>
+        </ex-slide>
+
+        <ex-code data-code="64" role="listitem">
+          <script class="language-json" type="text/plain">
+            {
+              "room":"kitchen"
+            }
+          </script>
+        </ex-code>
+
+        <ex-code data-code="32" role="listitem">
+          <script data-line="1" class="language-html" type="text/plain">
+            <radio-list required name="room">
+              <label>
+                <input type="radio" 
+                       value="kitchen" 
+                       name="room">
+                Кухня
+              </label>
+            </radio-list>
+          </script>
+        </ex-code>
+
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-7" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-7 required name="room">
+                <label>
+                  <input type="radio" value="kitchen" name="room">
+                  Кухня
+                </label>
+              </radio-list-7>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML7 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+
+            class RadioList7 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML7(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+                this.radioInput = this.shadowRoot.querySelector('input[type="radio"]');
+              }
+
+              connectedCallback () {
+                this.changeHandler = this.changeHandler.bind(this);
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+
+                const nodes = this.shadowRoot.querySelector('slot').assignedElements();
+                const fragment = document.createDocumentFragment();
+                nodes.forEach(node => fragment.appendChild(node));
+                this.fieldset.prepend(fragment);
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                this.setAttribute('value', radioValue);
+                const isHidden = this.textInput.hasAttribute('hidden');
+                const isOther = radioValue === 'other';
+                if (isOther && isHidden) {
+                  this.textInput.removeAttribute('hidden');
+                } else if (!isOther && !isHidden) {
+                  this.textInput.setAttribute('hidden', true);
+                  this.textInput.value = "";
+                }
+                radioValue = isOther ? this.textInput.value : radioValue ;
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-7', RadioList7);
+
+            const form1x7 = document.getElementById("demo-1-7");
+            form1x7.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x7.reset();
+              console.log(Object.fromEntries(new FormData(form1x7)));
+            });
+          </script>
+        </ex-slide>
+
+        <ex-code data-code="100" role="listitem">
+          <script class="language-json" type="text/plain">
+            {}
+          </script>
+        </ex-code>
+  
+        <ex-mktitle data-narrow data-size="5.5rem" data-top="10px" data-left="0px" role="listitem" >Валидация</ex-mktitle>
+  
+        <ex-code data-code="24" role="listitem">
+          <script  class="language-javascript" type="text/plain">
+            checkValidity() {
+              const textValid = this.textInput.validity.valid;
+              if (!textValid) {
+                this.internals.setValidity(
+                  this.emailInput.validity, 
+                  this.emailInput.validationMessage, 
+                  this.emailInput);
+              }
+              /* … */
+            }
+          </script>
+        </ex-code>
+
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-8" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-8 data-validate required name="room">
+                <label>
+                  <input type="radio" value="kitchen" name="room">
+                  Кухня
+                </label>
+              </radio-list-8>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+          </form>
+          <script>
+            const templateHTML8 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+
+            class RadioList8 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML8(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+                this.radioInput = this.shadowRoot.querySelector('input[type="radio"]');
+                
+                this.checkValidity = this.checkValidity.bind(this);
+                this.changeHandler = this.changeHandler.bind(this);
+              }
+
+              connectedCallback () {
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+
+                const nodes = this.shadowRoot.querySelector('slot').assignedElements();
+                const fragment = document.createDocumentFragment();
+                nodes.forEach(node => fragment.appendChild(node));
+                this.fieldset.prepend(fragment);
+
+                const isRequired = this.hasAttribute('required');
+                this.checkValidity();
+              }
+
+              checkValidity() {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                const isOther = radioValue === 'other';
+                const radioValidity = this.radioInput.validity.valid;
+                const textValid = this.textInput.validity.valid;
+                if (!radioValidity) {
+                  this.internals.setValidity(this.radioInput.validity, this.radioInput.validationMessage, this.radioInput);
+                } else if (isOther && !textValid) {
+                  this.internals.setValidity(this.textInput.validity, this.textInput.validationMessage, this.textInput);
+                } else {
+                  this.internals.setValidity({});
+                }
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                const isHidden = this.textInput.hasAttribute('hidden');
+                const isOther = radioValue === 'other';
+                this.checkValidity(isOther);
+                this.setAttribute('value', radioValue);
+                if (isOther && isHidden) {
+                  this.textInput.removeAttribute('hidden');
+                } else if (!isOther && !isHidden) {
+                  this.textInput.setAttribute('hidden', true);
+                  this.textInput.value = "";
+                }
+                radioValue = isOther ? this.textInput.value : radioValue ;
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-8', RadioList8);
+
+            const form1x8 = document.getElementById("demo-1-8");
+            form1x8.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x8.reset();
+              console.log(Object.fromEntries(new FormData(form1x8)));
+            });
+          </script>
+        </ex-slide>
+
+        <ex-slide data-wide data-center class="demo-1">
+          <form id="demo-1-9" action="/request" method="post" class="zoom form-demo">
+            <fieldset>
+              <legend>Выберите комнату:</legend>
+              <radio-list-9 data-validate required name="room">
+                <label>
+                  <input type="radio" value="kitchen" name="room">
+                  Кухня
+                </label>
+              </radio-list-9>
+            </fieldset>
+            <button type="submit">
+              Запросить стоимость ремонта
+            </button>
+            <button type="reset">Сбросить</button>
+          </form>
+          <script>
+            const templateHTML9 = (name, isRequired) => `
+            <style>@import url('talk/form.css');</style>
+            <fieldset>
+              <slot></slot>
+              <label>
+                <input type="radio" 
+                       ${isRequired ? 'required' : '' }
+                       value="other"
+                       name="${name}">
+                Другую комнату</label>
+              <input hidden required type="text" name="other-value" value="">
+            </fieldset>`;
+
+            class RadioList9 extends HTMLElement {
+              static formAssociated = true;
+
+              constructor() {
+                super();
+                this.internals = this.attachInternals();
+                this.attachShadow({mode: 'open'});
+                const template = document.createElement('TEMPLATE');
+                const name = this.getAttribute('name') || '';
+                const isRequired = this.hasAttribute('required');
+                template.innerHTML = templateHTML9(name, isRequired);
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+                this.radioInput = this.shadowRoot.querySelector('input[type="radio"]');
+                
+                this.checkValidity = this.checkValidity.bind(this);
+                this.changeHandler = this.changeHandler.bind(this);
+              }
+
+              connectedCallback () {
+                this.fieldset = this.shadowRoot.querySelector('fieldset');
+                this.fieldset.addEventListener('change', this.changeHandler);
+
+                const nodes = this.shadowRoot.querySelector('slot').assignedElements();
+                const fragment = document.createDocumentFragment();
+                nodes.forEach(node => fragment.appendChild(node));
+                this.fieldset.prepend(fragment);
+
+                const isRequired = this.hasAttribute('required');
+                this.checkValidity();
+              }
+
+              checkValidity() {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                const isOther = radioValue === 'other';
+                const radioValidity = this.radioInput.validity.valid;
+                const textValid = this.textInput.validity.valid;
+                if (!radioValidity) {
+                  this.internals.setValidity(this.radioInput.validity, this.radioInput.validationMessage, this.radioInput);
+                } else if (isOther && !textValid) {
+                  this.internals.setValidity(this.textInput.validity, this.textInput.validationMessage, this.textInput);
+                } else {
+                  this.internals.setValidity({});
+                }
+              }
+
+              changeHandler (event) {
+                const radio = this.shadowRoot.querySelector('input:checked');
+                let radioValue = radio === null ? '' : radio.value;
+                const isHidden = this.textInput.hasAttribute('hidden');
+                const isOther = radioValue === 'other';
+                this.checkValidity(isOther);
+
+                this.setAttribute('value', radioValue);
+                if (isOther && isHidden) {
+                  this.textInput.removeAttribute('hidden');
+                } else if (!isOther && !isHidden) {
+                  this.textInput.setAttribute('hidden', true);
+                  this.textInput.value = "";
+                }
+                radioValue = isOther ? this.textInput.value : radioValue ;
+                this.internals.setFormValue(radioValue);
+              }
+            }
+            customElements.define('radio-list-9', RadioList9);
+
+            const form1x9 = document.getElementById("demo-1-9");
+            form1x9.addEventListener('submit', (event) => {
+              event.preventDefault();
+              form1x9.reset();
+              console.log(Object.fromEntries(new FormData(form1x9)));
+            });
+          </script>
+        </ex-slide>
+
+      <ex-mktitle data-narrow data-size="5.5rem" data-top="20px" data-left="0px" role="listitem" >Сброс формы</ex-mktitle>
+
+      <ex-code data-code="20" role="listitem">
+        <script data-line="1" class="language-javascript" type="text/plain">
+          formResetCallback() {
+            const selectedRadio = this.shadowRoot.querySelector('input:checked');
+            if (selectedRadio !== null) {
+              selectedRadio.checked = false;
+              this.otherInput.toggleAttribute("hidden", true);
+              this.otherInput.value = "";
+            }
+            this.internals.setFormValue(null);
+            this.checkValidity();
+          }
+        </script>
+      </ex-code>
+
+      <ex-slide data-wide data-center class="demo-1">
+        <form id="demo-1-A" action="/request" method="post" class="zoom form-demo">
+          <fieldset>
+            <legend>Выберите комнату:</legend>
+            <radio-list-a required name="room">
+              <label>
+                <input type="radio" value="kitchen" name="room">
+                Кухня
+              </label>
+            </radio-list-a>
+          </fieldset>
+          <button type="submit">
+            Запросить стоимость ремонта
+          </button>
+          <button type="reset">Сбросить</button>
+        </form>
+        <script>
+          const templateHTMLA = (name, isRequired) => `
+          <style>@import url('talk/form.css');</style>
+          <fieldset>
+            <slot></slot>
+            <label>
+              <input type="radio" 
+                     ${isRequired ? 'required' : '' }
+                     value="other"
+                     name="${name}">
+              Другую комнату</label>
+            <input hidden required type="text" name="other-value" value="">
+          </fieldset>`;
+
+          class RadioListA extends HTMLElement {
+            static formAssociated = true;
+
+            constructor() {
+              super();
+              this.internals = this.attachInternals();
+              this.attachShadow({mode: 'open'});
+              const template = document.createElement('TEMPLATE');
+              const name = this.getAttribute('name') || '';
+              const isRequired = this.hasAttribute('required');
+              template.innerHTML = templateHTMLA(name, isRequired);
+              this.shadowRoot.appendChild(template.content.cloneNode(true));
+              this.textInput = this.shadowRoot.querySelector('input[type="text"]');
+              this.radioInput = this.shadowRoot.querySelector('input[type="radio"]');
+              
+              this.checkValidity = this.checkValidity.bind(this);
+              this.changeHandler = this.changeHandler.bind(this);
+            }
+
+            connectedCallback () {
+              this.fieldset = this.shadowRoot.querySelector('fieldset');
+              this.fieldset.addEventListener('change', this.changeHandler);
+
+              const nodes = this.shadowRoot.querySelector('slot').assignedElements();
+              const fragment = document.createDocumentFragment();
+              nodes.forEach(node => fragment.appendChild(node));
+              this.fieldset.prepend(fragment);
+
+              const isRequired = this.hasAttribute('required');
+              this.checkValidity();
+            }
+
+            checkValidity() {
+              const radio = this.shadowRoot.querySelector('input:checked');
+              let radioValue = radio === null ? '' : radio.value;
+              const isOther = radioValue === 'other';
+              const radioValidity = this.radioInput.validity.valid;
+              const textValid = this.textInput.validity.valid;
+              if (!radioValidity) {
+                this.internals.setValidity(this.radioInput.validity, this.radioInput.validationMessage, this.radioInput);
+              } else if (isOther && !textValid) {
+                this.internals.setValidity(this.textInput.validity, this.textInput.validationMessage, this.textInput);
+              } else {
+                this.internals.setValidity({});
+              }
+            }
+
+            formResetCallback() {
+              const selectedRadio = this.shadowRoot.querySelector('input:checked');
+              if (selectedRadio !== null) {
+                selectedRadio.checked = false;
+                this.textInput.toggleAttribute("hidden", true);
+                this.textInput.value = "";
+              }
+              this.internals.setFormValue(null);
+              this.checkValidity();
+            }
+
+            changeHandler (event) {
+              const radio = this.shadowRoot.querySelector('input:checked');
+              let radioValue = radio === null ? '' : radio.value;
+              const isHidden = this.textInput.hasAttribute('hidden');
+              const isOther = radioValue === 'other';
+              this.checkValidity(isOther);
+
+              this.setAttribute('value', radioValue);
+              if (isOther && isHidden) {
+                this.textInput.removeAttribute('hidden');
+              } else if (!isOther && !isHidden) {
+                this.textInput.setAttribute('hidden', true);
+                this.textInput.value = "";
+              }
+              radioValue = isOther ? this.textInput.value : radioValue ;
+              this.internals.setFormValue(radioValue);
+            }
+          }
+          customElements.define('radio-list-a', RadioListA);
+
+          const form1xA = document.getElementById("demo-1-A");
+          form1xA.addEventListener('submit', (event) => {
+            event.preventDefault();
+            form1xA.reset();
+            console.log(Object.fromEntries(new FormData(form1xA)));
+          });
+        </script>
+      </ex-slide>
+
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="performance-2022.svg" 
+        data-link="https://web.dev/more-capable-form-controls/" 
+        data-label="Откройте статью «More capable form controls»">
+        More capable form controls</ex-qrcode>
+
+      <ex-screen data-src="images/element-internals.png" data-alt="" role="listitem"></ex-screen>
+
+
+      <ex-illustration data-restart data-pixel data-src="images/fatality-9.gif" data-alt="" role="listitem">
+        <ex-cloud 
+          data-delay="2.5s" 
+          data-tail-size="2rem" 
+          data-angle="-85deg" 
+          data-size="36px" 
+          data-left="-350px" 
+          data-top="-160px"
+          >Apple?!</ex-cloud>
+
+          <ex-cloud 
+          data-delay="3.3s" 
+          data-tail-size="2rem" 
+          data-angle="75deg" 
+          data-size="36px" 
+          data-left="270px" 
+          data-top="-120px"
+          >Apple.</ex-cloud>
+      </ex-illustration>
+
+      <ex-screen data-src="images/element-internals-bug.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-illustration data-contain data-src="images/element-internals-comment.png" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="element-internals.svg" 
+        data-link="https://bugs.webkit.org/show_bug.cgi?id=197960" 
+        data-label="Прочтите о баге «Implement ElementInternals»">
+        Bug 197960 - Implement ElementInternals</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="custom-elements-everywhere.svg" 
+        data-link="https://custom-elements-everywhere.com/" 
+        data-label="Откройте «Custom Elements Everywhere»">
+        Custom Elements Everywhere</ex-qrcode>
+
+      <ex-screen data-src="images/react-17.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-illustration data-contain data-src="images/react-exp.jpeg" data-alt="" role="listitem"></ex-illustration>
+
+      <ex-screen data-src="images/react-exp.png" data-alt="" role="listitem"></ex-screen>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="wc-react.svg" 
+        data-link="https://youtu.be/fgtS_nfMOtw" 
+        data-label="Посмотрите «Web Components in React» от Matias Huhta»">
+        Web Components in React by Matias Huhta</ex-qrcode>
+
+      <ex-slide data-iframe data-wide role="listitem">
+        <iframe class="app" src="https://frontend.events/controls.html"></iframe>
+      </ex-slide>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="performance-2022.svg" 
+        data-link="https://engineering.linecorp.com/en/blog/the-baseline-for-web-development-in-2022/" 
+        data-label="Откройте слайды">
+        Презентация</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="exgibitionist.svg" 
+        data-link="https://github.com/SilentImp/exgibitionist" 
+        data-label="Откройте репозиторий движка презентаций">
+        Эксгибиционист</ex-qrcode>
+
+      <ex-qrcode 
+        data-level="3"
+        data-qrcode="mkwidget.svg" 
+        data-link="https://github.com/SilentImp/mkwidget" 
+        data-label="Откройте репозитрий прриложения голосования">
+        Репозиторий голосования</ex-qrcode>
+
+    </main>
+    <ex-progress></ex-progress>
+    <!-- <ex-countdown duration="20" relative></ex-countdown> -->
+    <script type="module" src="javascript/MessageController.mjs"></script>
+    <script type="module" src="javascript/components/Slide/Slide.mjs"></script>
+    <script type="module" src="javascript/components/Cloud/Cloud.mjs"></script>
+    <script type="module" src="javascript/components/Columns/Columns.mjs"></script>
+    <script type="module" src="javascript/components/Code/Code.mjs"></script>
+    <script type="module" src="javascript/components/QRCode/QRCode.mjs"></script>
+    <script type="module" src="javascript/components/Countdown/Countdown.mjs"></script>
+    <script type="module" src="javascript/components/Illustration/Illustration.mjs"></script>
+    <script type="module" src="javascript/components/Progress/Progress.mjs"></script>
+    <script type="module" src="javascript/components/Screenshot/Screenshot.mjs"></script>
+    <script type="module" src="javascript/components/Title/Title.mjs"></script>
+    <script type="module" src="javascript/components/MKTitle/MKTitle.mjs"></script>
+    <script type="module" src="javascript/SlideController.mjs"></script>
+    <script src="javascript/prism.js" data-manual></script>
+
+
+      <!-- <ex-title data-narrow data-level="1" role="listitem" >Template</ex-title>
+
+      <ex-title data-narrow data-level="1" role="listitem" >HTML Template Instantiation</ex-title>
+      
+      <ex-title data-narrow data-level="1" role="listitem" >DOM Parts</ex-title>
+
+      <ex-title data-narrow data-level="1" role="listitem" >Shadow DOM</ex-title> -->
+
+      <!-- <ex-title data-narrow data-level="1" role="listitem" >Наследование от прочих HTMLElement</ex-title>
+
+      <ex-illustration data-src="images/xray-3.jpeg" data-alt="" role="listitem">
+        <ex-cloud data-tail-size="2rem" data-angle="-85deg" data-reverse data-size="18px" data-left="-200px" data-top="-160px">Ни webkit,<br>ни gecko<br>не поддерживают<br>::host-context()<br>и не будут</ex-cloud>
+      </ex-illustration>
+
+
+      <ex-title data-narrow data-level="1" role="listitem" >Наследование от прочих элементов</ex-title>
+
+      <ex-illustration data-src="images/xray-4.jpeg" data-alt="" role="listitem">
+        <ex-cloud data-tail-size="2rem" data-angle="60deg" data-reverse data-size="24px" data-left="160px" data-top="-160px">Webkit<br>отказался<br>внедрять<br>стандарт!</ex-cloud>
+      </ex-illustration>
+
+      <ex-title data-narrow data-level="1" role="listitem" >Наследование от других веб&nbsp;-&nbsp;компонент</ex-title> -->
+
+      <!-- <ex-title data-narrow data-level="1" role="listitem" >Формы</ex-title> -->
+
+      <!-- <ex-title data-narrow data-level="1" role="listitem" >Очистка</ex-title>
+
+      <ex-title data-narrow data-level="1" role="listitem" >Блокировка</ex-title>
+      
+      <ex-title data-narrow data-level="1" role="listitem" >React.js</ex-title>
+
+      <ex-title data-narrow data-level="1" role="listitem" >Атрибуты</ex-title>
+
+      <ex-title data-narrow data-level="1" role="listitem" >Свойства</ex-title> -->
+  </body>
+</html>

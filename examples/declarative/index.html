@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <declarative-slide>
+    <template shadowroot="open">
+      <style>@import "SlideSSR.css";</style>
+      <article class="slide">
+          <slot></slot>
+          <slot name="caption"></slot>
+        </figure>
+      </article>
+    </template>
+    This is text of the slide
+    <figcaption slot="caption">
+      And Captions
+    </figcaption>
+  </declarative-slide>
+  <under-slot></under-slot>
+  <script>
+    const templateHTMLUnder = `<p part="underpart">Under dog</p>`;
+    class UnderSlot extends HTMLElement {  
+      constructor() {
+        super();
+        this.internals = this.attachInternals();
+        this.attachShadow({mode: 'open'});
+        const template = document.createElement('TEMPLATE');
+        template.innerHTML = templateHTMLUnder;
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+      }
+    }
+    customElements.define('under-slot', UnderSlot);
+
+    const element = document.querySelector('under-slot');
+    console.log(element.innerHTML);
+    console.log(element.getInnerHTML());
+    console.log(element.getInnerHTML({
+      includeShadowRoots: true,
+    }));
+  </script>
+</body>
+</html>

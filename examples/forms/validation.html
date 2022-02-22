@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="demo" action="" method="post" class="zoom">
+    <fieldset>
+      <custom-subscription name="email" value="" required></custom-subscription>
+    </fieldset>
+    <button type="submit">Подписаться</button>
+  </form>
+  <script>
+
+    const templateHTML = (name, value, isRequired) => `
+    <label>
+      Адрес электро-почты: 
+      <input value="${value}" 
+        ${isRequired ? 'required' : '' }
+        autocomplete="email"
+        type="email" name="${name}" 
+        inputmode="email">
+    </label>`;
+  
+    class CustomSubscription extends HTMLElement {
+      static formAssociated = true;
+  
+      constructor() {
+        super();
+        this.internals = this.attachInternals();
+        this.attachShadow({mode: 'open'});
+        const template = document.createElement('TEMPLATE');
+        console.log(this, this.getAttribute('name'));
+        const name = this.getAttribute('name');
+        const value = this.getAttribute('value') || "";
+        const isRequired = this.hasAttribute('required');
+        template.innerHTML = templateHTML(name, value, isRequired);
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+  
+        this.emailInput = this.shadowRoot.querySelector('input');
+        if (this.hasAttribute('value')) {
+          this.internals.setFormValue(this.getAttribute.value);
+        }
+        this.changeHandler = this.changeHandler.bind(this);
+      }
+  
+      connectedCallback () {
+        this.emailInput.addEventListener('change', this.changeHandler);
+      }
+  
+      changeHandler (event) {
+        this.setAttribute('value', this.emailInput.value);
+        this.internals.setFormValue(this.emailInput.value);  
+        this.internals.setValidity(this.emailInput.validity, this.emailInput.validationMessage, this.emailInput);
+      }
+    }
+    customElements.define('custom-subscription', CustomSubscription);
+    const form = document.getElementById("demo");
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      form.reset();
+      console.log(Object.fromEntries(new FormData(form)));
+    });
+  </script>
+</body>
+</html>
