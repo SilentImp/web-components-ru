@@ -57,10 +57,39 @@
   display: block;
 }
 
-// radio-list-8:invalid {
-//   background-color: #cc000066;
-// }
+svg[hidden] {
+  display: none;
+}
 
-// radio-list-8:valid {
-//   background-color: #00dd0066;
-// }
+.made-in-ukraine {
+  width: 200px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.made-in-ukraine-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.made-in-ukraine-wrapper img {
+  width: 80%;
+  max-width: 100%;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+address.address {
+  font-size: 1.8rem;
+  line-height: 1.44;
+  margin-top: 2rem;
+}

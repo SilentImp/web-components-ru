@@ -37,6 +37,7 @@ class SlideController {
     this.selectKeys = [Keys.enter, Keys.space];
     this.exitFullscreenKeys = [Keys.esc];
     this.enterFullscreenKeys = [Keys.F];
+    this.restartTimerKeys = [Keys.T];
 
     // Set Key listeners
     document.addEventListener('touchstart', this.handleTouchStart, false);
@@ -67,11 +68,11 @@ class SlideController {
     this.slides = [...this.slides];
     this.totalSlides = this.slides.length;
 
-    // SlideController.messenger.post("slidecontroller:total", {
-    //   detail: {
-    //     slideTotal: this.totalSlides,
-    //   },
-    // });
+    SlideController.messenger.post("slidecontroller:total", {
+      detail: {
+        slideTotal: this.totalSlides,
+      },
+    });
 
     // Give slides a number and tabindex
     this.slides.forEach((slide, index) => {
@@ -82,17 +83,14 @@ class SlideController {
     // Get current slide from hash
     this.slideFromString();
 
-    console.log('slide', this.currentSlide);
-
     // select current slide
     SlideController.messenger.post("slidecontroller:select", {
       detail: {
+        oldSlide: null,
         slideNumber: this.currentSlide,
       },
       bubbles: true,
     });
-
-    // console.log(StateURL.fullscreen);
     
     // Get fullscreen state from search query
     if (StateURL.fullscreen) {
@@ -101,6 +99,11 @@ class SlideController {
           force: StateURL.fullscreen
         }
       });
+    }
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(this.scrollToCurrent);
+    } else {
+      setTimeout(this.scrollToCurrent, 2000);
     }
   }
 
@@ -181,6 +184,7 @@ class SlideController {
     if (element.matches(Selectors.slide)) {
       SlideController.messenger.post("slidecontroller:select", {
         detail: {
+          oldSlide: this.currentSlide,
           slideNumber: parseInt(element.dataset.number),
         },
         bubbles: true,
@@ -196,7 +200,6 @@ class SlideController {
   // toggle fullscreen mode
   fullScreenChange (event) {
     const force = event?.detail?.force;
-    console.log('fullscreen force:', force);
 
     window.document.documentElement.classList.toggle(ClassNames.fullscreen, force);
     StateURL.fullscreen = force;
@@ -209,8 +212,6 @@ class SlideController {
     
     // no need to scroll in fullscreen
     if (force === true) return;
-
-    console.log('change');
 
     // scroll to slide in the list mode
     SlideController.messenger.post("slidecontroller:change", {
@@ -228,7 +229,7 @@ class SlideController {
   
   // scroll to slide
   scrollToCurrent (event) {
-    const animated = !!event?.detail?.animated;
+    const animated = !!event?.detail?.animated || false;
     // We can't scroll in the fullscreen mode
     if (StateURL.fullscreen) return;
     // We should do it on next cicle, when redraw happen and we can check if slide in the viewport
@@ -277,7 +278,6 @@ class SlideController {
   markSlide (event) {
     const slideNumber = this.safeSlideNumber(event?.detail?.slideNumber);
     
-
     if (
       slideNumber === this.currentSlide && 
       this.slides[this.currentSlide].classList.contains(ClassNames.currentSlide)
@@ -333,8 +333,16 @@ class SlideController {
     if (this.nextKeys.includes(event.which)) {
       SlideController.messenger.post("slidecontroller:select", {
         detail: {
+          oldSlide: this.currentSlide,
           slideNumber: this.cicleSlideNumber(this.currentSlide + 1),
         },
+        bubbles: true,
+      });
+    }
+
+    // Restart timer
+    if (this.restartTimerKeys.includes(event.which)) {
+      SlideController.messenger.post("slidecontroller:restartTimer", {
         bubbles: true,
       });
     }
@@ -343,6 +351,7 @@ class SlideController {
     if (this.prevKeys.includes(event.which)) {
       SlideController.messenger.post("slidecontroller:select", {
         detail: {
+          oldSlide: this.currentSlide,
           slideNumber: this.cicleSlideNumber(this.currentSlide - 1),
         },
         bubbles: true,

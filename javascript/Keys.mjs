@@ -29,7 +29,7 @@ export default {
   // Captions
   C: 67,
 
-  // Timer controller
+  // Restart timer
   T: 84,
 
   // Fullscreen toggle

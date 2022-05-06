@@ -27,10 +27,35 @@ main {
   align-items: start;
 }
 
+main > * {
+  opacity: 0;
+  transition: opacity .25s 2s;
+}
+
+main > *:defined {
+  opacity: 1;
+}
+
 :not(:defined) > template[shadowroot] ~ *,
 :not(:defined) > *,
 :not(:defined) {
   visibility: hidden;
+}
+
+@supports not selector(:host-context(*)) {
+  html.fullscreen main > :not(.current):not(.prev):not(.next) {
+    display: none;
+  }
+
+  html.fullscreen main > .current {
+    display: flow-root;
+  }
+
+  html.fullscreen main > .next,
+  html.fullscreen main > .prev {
+    display: flow-root;
+    visibility: hidden;
+  }
 }
 
 @media print {

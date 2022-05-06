@@ -65,7 +65,6 @@ class MessageController {
 
   messageHandler(messageEvent) {
     const { data: { name, detail } } = messageEvent;
-    // console.log('get message', detail, messageEvent)
     if (this.handlers[name] === undefined) return;
     this.handlers[name].forEach(handler => {
       handler({detail});

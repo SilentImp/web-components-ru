@@ -46,8 +46,8 @@
 }
 
 /** Visualy hide previous and next slide, if they are not current in the same time **/
-:host-context(.fullscreen):host(.prev:not(.current)),
-:host-context(.fullscreen):host(.next:not(.current)) {
+:host-context(.fullscreen):host(.prev),
+:host-context(.fullscreen):host(.next) {
   display: flow-root;
   visibility: hidden;
 }
@@ -202,6 +202,7 @@
 
 /** NO HOST-CONTEXT SUPPORT **/
 @supports not selector(:host-context(*)) {
+
   :host(.fullscreen) .slide {
     position: fixed;
     top: 50%;

@@ -9,6 +9,7 @@ const templateHTML = ({dataset} = {}) => {
   <div class="half">
     <div>
       <h${level}><slot></slot></h${level}>
+      <slot name="details"></slot>
     </div>
   </div>
   <div class="half">

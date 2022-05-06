@@ -37,10 +37,10 @@ const attributes = {
 }
 
 const defaults = {
-  rushFor: 30,
-  rushForCritical: 50,
-  lateFor: 10,
-  lateForCritical: 20,
+  rushFor: 20,
+  rushForCritical: 30,
+  lateFor: 7,
+  lateForCritical: 15,
 }
 
 const MINUTES = 60000;
@@ -62,8 +62,9 @@ class ExgibitonistCountdown extends HTMLElement {
     this.fullScreenChange = this.fullScreenChange.bind(this);
     this.selectSlide = this.selectSlide.bind(this);
     this.setTotal = this.setTotal.bind(this);
+    this.restartTimer = this.restartTimer.bind(this);
 
-    // window[Symbol.for("SlideMessanger")].register('slidecontroller:fullscreenchange', this.fullScreenChange);
+    window[Symbol.for("SlideMessanger")].register('slidecontroller:fullscreenchange', this.fullScreenChange);
   }
 
   setTotal(event) {
@@ -104,10 +105,16 @@ class ExgibitonistCountdown extends HTMLElement {
       this.lateForCritical = this.getAttribute(attributes.lateForCritical) ?? defaults.lateForCritical;
     }
 
-    // window[Symbol.for("SlideMessanger")].register('slidecontroller:total', this.setTotal);
-    // window[Symbol.for("SlideMessanger")].register('slidecontroller:select', this.selectSlide);
+    window[Symbol.for("SlideMessanger")].register('slidecontroller:total', this.setTotal);
+    window[Symbol.for("SlideMessanger")].register('slidecontroller:select', this.selectSlide);
+
+    window[Symbol.for("SlideMessanger")].register('slidecontroller:restartTimer', this.restartTimer);
 
     if (StateURL.fullscreen || this.showInList) requestAnimationFrame(this.calculate);
+  }
+
+  restartTimer() {
+    this.startTime = +Date.now();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

@@ -41,6 +41,8 @@ class Slide extends HTMLElement {
       ...executedVariables
     });
 
+    if (this.dataset.bgc) this.style.setProperty('--slide-bgc', this.dataset.bgc);
+
     this.selectSlide = this.selectSlide.bind(this);
     this.checkFocus = this.checkFocus.bind(this);
 
